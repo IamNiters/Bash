@@ -1,0 +1,74 @@
+Enquête Shell : Le Vol du Prototype
+
+Un prototype technologique a été volé dans un laboratoire de Port Azure.
+
+La police possède deux bases de données : - port_azure_people.csv -
+port_azure_vehicles.csv
+
+Indices :
+
+1.  Le suspect vit à Port Azure.
+2.  C’est un homme.
+3.  Il mesure plus de 6 pieds.
+4.  Le témoin a vu une voiture noire quitter la zone.
+5.  La plaque commence par XZ.
+
+Votre objectif est de retrouver le suspect en utilisant les commandes :
+
+cat grep wc pipe | head tail
+
+------------------------------------------------------------------------
+
+Étape 1 : explorer les fichiers
+
+cat port_azure_people.csv cat port_azure_vehicles.csv
+
+------------------------------------------------------------------------
+
+Étape 2 : trouver les habitants de Port Azure
+
+grep “Port Azure” port_azure_people.csv
+
+------------------------------------------------------------------------
+
+Étape 3 : trouver les hommes
+
+grep “,M,” port_azure_people.csv
+
+------------------------------------------------------------------------
+
+Étape 4 : trouver les personnes de plus de 6 pieds
+
+grep “6.” port_azure_people.csv
+
+------------------------------------------------------------------------
+
+Étape 5 : combiner les filtres
+
+grep “Port Azure” port_azure_people.csv | grep “,M,” | grep “6.”
+
+------------------------------------------------------------------------
+
+Étape 6 : analyser les véhicules
+
+grep “Black” port_azure_vehicles.csv
+
+------------------------------------------------------------------------
+
+Étape 7 : chercher la plaque
+
+grep “XZ” port_azure_vehicles.csv
+
+------------------------------------------------------------------------
+
+Étape finale
+
+Combiner les informations des deux fichiers pour trouver :
+
+-   un homme
+-   vivant à Port Azure
+-   mesurant plus de 6 pieds
+-   possédant une voiture noire
+-   plaque commençant par XZ
+
+Quel est le suspect ?
